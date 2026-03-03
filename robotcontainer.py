@@ -430,3 +430,4 @@ class RobotContainer:
         self._auto_chooser.addOption("outpost auto blue", PathPlannerAuto("outpost auto blue"))
         self._auto_chooser.addOption("get+shoot+get fuel+climb", PathPlannerAuto("get+shoot+get fuel+climb"))
         SmartDashboard.putData("Auto Mode", self._auto_chooser)
+        
