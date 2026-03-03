@@ -109,6 +109,9 @@ class Shooter(Subsystem):
         elif self.motor_speed_global >= 0:
             self.motor_speed_global = -0.05
             print("Upper Limit")
+        
+        self.flywheel_duty_cycle_out.output = self.motor_speed_global
+        self._shooter_flywheel.set_control(self.flywheel_duty_cycle_out)
 
     def is_shooter_spinning(self, thresholdPercent) -> bool :
         rotor_velocity = self._shooter_flywheel.get_rotor_velocity()
