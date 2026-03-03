@@ -136,7 +136,7 @@ class RobotContainer:
         # Set up default commands
         self.setDefaultCommands()
         self.configureButtonBindings()
-        self.configure_path_planner()
+        # self.configure_path_planner()
 
     def setDefaultCommands(self) -> None:
         """Set up default commands for subsystems. Called from __init__."""
@@ -425,7 +425,8 @@ class RobotContainer:
         
         # Path follower
         self._auto_chooser = AutoBuilder.buildAutoChooser("midfieldshoot")  # Parameter is default Path
-        self._auto_chooser.addOption("midfieldshoot", PathPlannerAuto("midfieldshoot"))
+        # self._auto_chooser.addOption("midfieldshoot", PathPlannerAuto("midfieldshoot"))
+        self._auto_chooser.addOption("Nuetral zone auto blue", PathPlannerAuto("Nuetral zone auto blue"))
         self._auto_chooser.addOption("outpost auto blue", PathPlannerAuto("outpost auto blue"))
         self._auto_chooser.addOption("get+shoot+get fuel+climb", PathPlannerAuto("get+shoot+get fuel+climb"))
         SmartDashboard.putData("Auto Mode", self._auto_chooser)
